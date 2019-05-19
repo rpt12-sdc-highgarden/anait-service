@@ -4,8 +4,9 @@
 
 ## Related Projects
 
-- <https://github.com/rpt12-knightrider/jb-service>
-- <https://github.com/rpt12-knightrider/sm-service>
+- < https://github.com/rpt12-sdc-highgarden/aarushi-service>
+- < https://github.com/rpt12-sdc-highgarden/alyssa-service>
+- < https://github.com/rpt12-sdc-highgarden/mike-service>
 
 ## Table of Contents
 
@@ -77,6 +78,22 @@ A review object would look like this:
 - description: updates the `likes_count` for the specified review depending on the current state of the button (being like or unlike).
 - API response:
 A JSON-encoded **updated** review object with the new `likes_count`
+
+
+### `/newreview`
+
+- method: `POST`.
+- description: adds new review.
+- API response: status code 200, 'Successfully saved'.
+
+
+### `/deletereview/:id`
+
+- method: `DELETE`.
+- description: deletes selected review.
+- API response: status code 200, `DeletedReview`.
+
+
 
 ## Running the tests
 
