@@ -29,6 +29,7 @@ const addNewReview = () => {
   newReview.review_date = moment(faker.date.past()).format('MMM DD, YY'),
   newReview.review_description = faker.lorem.paragraphs(),
   newReview.likes_count = Math.floor(Math.random() * 1000),
+
 };
 
 review.insertMany(fakeData)
