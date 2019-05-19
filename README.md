@@ -83,15 +83,15 @@ A JSON-encoded **updated** review object with the new `likes_count`
 ### `/newreview`
 
 - method: `POST`.
-- description: deletes selected review.
-- API response: New JSON-encoded review object.
+- description: adds new review.
+- API response: status code 200, 'Successfully saved'.
 
 
 ### `/deletereview/:id`
 
 - method: `DELETE`.
-- description: adds new review.
-- API response: status code 200, 'Successfully saved'.
+- description: deletes selected review.
+- API response: status code 200, `DeletedReview`.
 
 
 
