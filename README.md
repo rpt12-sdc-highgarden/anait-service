@@ -23,10 +23,22 @@
 npm install
 ```
 
-2- run the seeding script tp feed the database with 10000 reviews documents.
+2- run the seeding script to feed the database (Mongo) with 10M reviews documents.
 
 ```sh
 npm run seed
+```
+
+2a- run the script to create CSV file with 10M records.
+
+```sh
+npm run myseed
+```
+
+2b- run the seeding script tp feed the database(MySQL) with 10M records.
+
+```sh
+npm run schema
 ```
 
 3- transpile the components.
@@ -48,6 +60,7 @@ npm start
 - Node 8.11.4
 - npm 5.6.0
 - MongoDB
+- MySQL
 
 ## API Endpoints
 
