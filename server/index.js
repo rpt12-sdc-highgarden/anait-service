@@ -1,4 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
+require('newrelic');
+
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
@@ -10,9 +12,7 @@ console.log(port);
 const app = express();
 app.listen(port, () => console.log(`listening on port ${port}`));
 
-const urlencodedParser = bodyParser.urlencoded({ extended: false });
-
-app.use(express.static(`${__dirname}/../public`));
+app.use('/', express.static(`${__dirname}/../public`));
 app.use('/:id', express.static(`${__dirname}/../public`));
 app.use(morgan('dev'));
 app.use(cors());
@@ -26,6 +26,8 @@ app.get('/reviews/:id', (req, res) => {
       console.log(err);
     });
 });
+
+const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 app.post('/newreview', urlencodedParser, (req, res) => {
   let newReview = new review(req.body);

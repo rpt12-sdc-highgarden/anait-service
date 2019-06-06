@@ -15,11 +15,12 @@ class Reviews extends React.Component {
   }
 
   componentDidMount() {
-    const bookId = Number(window.location.pathname.split('/')[1]) || 0;
+    const bookId = Number(window.location.pathname.split('/')[1]) || 1;
 
     fetch(`http://localhost:3003/reviews/${bookId}`)
       .then(result => result.json())
       .then((result) => {
+        console.log('inside client: ', result);
         this.setState(() => (
           {
             reviews: result,
