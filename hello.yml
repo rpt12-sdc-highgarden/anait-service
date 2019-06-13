@@ -4,20 +4,17 @@ config:
     pool: 100000
   phases:
     - duration: 60
-      arrivalRate: 10
-  # defaults:
-  #   headers:
-  #     x-my-service-auth: '987401838271002188298567'
+      arrivalRate: 100
 scenarios:
   - name: "get"
     flow:
-    - loop: 
+    # - loop: 
       - get:
           url: "/reviews/{{ $randomNumber(9999000, 10000000) }}"
-      count: 10000
+    count: 10
   - name: "post"
     flow: 
-      - loop: 
+      # - loop: 
         - post:
             url: "/newreview"
-        count: 10000
+    count: 10

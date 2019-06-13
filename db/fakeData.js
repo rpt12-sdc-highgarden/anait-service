@@ -3,11 +3,9 @@ const moment = require('moment');
 const { review } = require('./models.js');
 
 
-//async function
 async function seeding() {
   try { 
     var fakeData = [];
-    //add 1M records
     var startTime = new Date();
 
     var tenMillion = 10000000;
@@ -26,15 +24,9 @@ async function seeding() {
         console.log('Data ----->', i)
       }
       fakeData.push(document);
-      // if statement if loop is reaching 10k then  i % 10k === 0
-      // for (let i = 1; i < tenMil + 1; i++) {
-      //   if (data.length > 99 || i === tenMil)
-      // if (i % 25 === 0) { 
       if (fakeData.length > 99 || i === tenMillion) {
-        // await insert many
         var insert = await review.insertMany(fakeData)
         fakeData = [];
-      // console.log('data is successfully seeded!');
       }
     } 
   } catch (error) {
