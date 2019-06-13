@@ -4,13 +4,13 @@ config:
     pool: 100000
   phases:
     - duration: 60
-      arrivalRate: 10
+      arrivalRate: 100
 scenarios:
   - name: "get"
     flow:
     # - loop: 
       - get:
-          url: "/reviews/{{ $randomNumber(999900, 1000000) }}"
+          url: "/reviews/{{ $randomNumber(9999000, 10000000) }}"
     count: 10
   - name: "post"
     flow: 
